@@ -1,0 +1,49 @@
+table {
+    counter-reset: tableCount;
+    border:solid black 1px;
+    border-radius:6px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    height: 70%;
+    text-align: center;
+}
+.counterCell:before {
+    content: counter(tableCount);
+    counter-increment: tableCount;
+}
+
+th{
+    width: 50px;
+    height: 50px;
+    background-color: #919492
+}
+
+td{
+   width: 50px;
+    height: 50px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.head1{
+    padding-left: 15%;
+}
+
+.button {
+    display: block;
+    width: 115px;
+    height: 15px;
+    background: #4E9CAF;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+    margin: auto
+}
+
