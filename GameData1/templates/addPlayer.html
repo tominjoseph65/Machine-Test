@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+{%load static%}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{%static 'css/style.css' %}">
+</head>
+<body>
+    <form method="POST"  action="{%url 'view_data' %}">
+        {%csrf_token%}
+        <table>
+            <tr>
+                <th colspan="2">Add Players</th>
+            </tr>
+            <tr>
+                <td><label>Player Name</label></td>
+                <td><input type="text" name="name" /></td>
+            </tr>
+            <tr>
+                <td><label>Email</label></td>
+                <td> <input type="text"  name="email" /></td>
+            </tr>
+            <tr>
+                <td><label>Country</label></td>
+                <td> <input type="text"  name="country" /></td>
+            </tr>
+            <tr>
+                <td><label>Game</label></td>
+                <td> <input type="text"  name="game" /></td>
+            </tr>
+            <tr>
+                <td><label>Score</label></td>
+                <td><input type="number" name="score"/></td>
+            </tr>
+            <tr>
+				<td colspan="2" ><button>Add</button></td>
+
+			</tr>
+
+        </table>
+    </form>
+</body>
+</html>

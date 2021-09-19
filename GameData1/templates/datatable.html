@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+{%load static%}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{%static 'overall/css/overall.css' %}">
+</head>
+<body>
+    <a href="{% url 'adduser' %}" class="button">ADD</a> <br>
+    <a href="{% url 'overall' %}" class="button">ALL-TIME</a>
+    <h1 class="head1">Player Details</h1>
+     <form>
+        <table>
+            <tr>
+                <th>No</th>
+                <th>#ID</th>
+                <th>Player Name</th>
+                <th>Player Email</th>
+                <th>Country</th>
+                <th>Games</th>
+                <th>Score</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+
+            {% for sports in sports %}
+                <tr>
+                    <td class="counterCell"></td>
+                    <td>{{sports.id}}</td>
+                    <td>{{sports.name}}</td>
+                    <td>{{sports.email}}</td>
+                    <td>{{sports.country}}</td>
+                    <td>{{sports.game}}</td>
+                    <td>{{sports.score}}</td>
+                    <td><a href="{%url 'edit_player' id=sports.id %}" class="button1">EDIT</a></td>
+                    <td><a href="{%url 'delete_player' id=sports.id %}" class="button1">DELETE</a></td>
+                </tr>
+
+            {% endfor %}
+        </table>
+
+    </form>
+</body>
+</html>

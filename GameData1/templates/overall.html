@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+{%load static%}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{%static 'css/style.css' %}">
+</head>
+<body>
+    <a href="{% url 'view_data' %}" class="button">DATA TABLE</a>
+     <form>
+
+        <table>
+            <h1 class="head1">Top Players</h1>
+            <tr>
+                <th>#ID</th>
+                <th>Player Name</th>
+                <th>Player Email</th>
+                <th>Country</th>
+                <th>No of games</th>
+                <th>Total Score</th>
+
+            </tr>
+
+            {% for sports in sports %}
+                <tr>
+                    <td class="counterCell"></td>
+                    <td>{{sports.name}}</td>
+                    <td>{{sports.email}}</td>
+                    <td>{{sports.country}}</td>
+                    <td>{{sports.total}}</td>
+                    <td>{{sports.sums}}</td>
+
+                </tr>
+
+            {% endfor %}
+        </table>
+
+
+    </form>
+</body>
+</html>
